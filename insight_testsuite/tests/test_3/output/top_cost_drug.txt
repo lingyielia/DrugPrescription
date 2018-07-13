@@ -1,0 +1,3 @@
+drug_name,num_prescriber,total_cost
+ILEVRO,1,1000
+PREDNISONE,2,406

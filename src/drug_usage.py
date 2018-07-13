@@ -5,14 +5,20 @@ drug_cost = {} # store {drug name: cost sum}
 
 def top_cost_drug():
     with open(get_file_path()[0], "r") as infile:
-        for line in infile:
 
+        for line in infile:
             # skip the header if has one
             if not line.split(",")[0].isdigit():
                 continue
 
-            #update dictionary `drug_pres` and `drug_cost`
+            # update dictionary `drug_pres` and `drug_cost`
             drug_pres, drug_cost = group_pres_cost(line)
+
+    #output an file containing only column names if result is empty
+    if ('drug_pres' not in locals()) and ('drug_cost' not in locals()):
+        with open(get_file_path()[1], "w+") as file:
+            file.write("drug_name,num_prescriber,total_cost")
+            return
 
     # after group all input data, combine two dictionaries and sort results in descending
     res = combine_and_sort(drug_pres, drug_cost)
@@ -31,9 +37,14 @@ def group_pres_cost(line):
     for dictionary `drug_pres`: store drug name as key, unique prescribers' ids as value
     for dictionary `drug_cost`: store drug name as key, added drug cost as value
     '''
-    id_pres = int(line.split(",")[0])
-    name_drug = line.split(",")[3]
-    cost_drug = float(line.split(",")[-1].rstrip())
+
+    # if certain record contains any missing value, skip this line
+    try:
+        id_pres = int(line.split(",")[0])
+        name_drug = line.split(",")[3]
+        cost_drug = float(line.split(",")[4].rstrip())
+    except IndexError:
+        return drug_pres, drug_cost
 
     if name_drug not in drug_pres:
         drug_pres[name_drug] = set([id_pres])
