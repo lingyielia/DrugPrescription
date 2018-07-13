@@ -3,12 +3,6 @@ __Notice__
 I used `Python3` in this task.  
 In the script, I used `import sys`
 
-## How to start
-In the shell, locate my repo's root directory, run:
-```shell
-bash run.sh
-```
-
 ## How do I approach this task
 1. I first open 2 dictionaries. One records drug name and its total cost. The other records drug name and its unique prescribers.
 2. I then combine these 2 dictionaries' information into a list of tuples. Each tuple contains drug name, count of unique prescribers, total cost.
