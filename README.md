@@ -26,24 +26,45 @@ The directory structure for this repo:
 .
 ├── README.md
 ├── input
-│   └── README.md
+│   └── itcont.txt
 ├── insight_testsuite
 │   ├── run_tests.sh
 │   └── tests
-│       └── test_1
-│           ├── README.md
+│       ├── test_1
+│       │   ├── input
+│       │   │   └── itcont.txt
+│       │   └── output
+│       │       └── top_cost_drug.txt
+│       ├── test_2
+│       │   ├── input
+│       │   │   └── itcont.txt
+│       │   └── output
+│       │       └── top_cost_drug.txt
+│       ├── test_3
+│       │   ├── input
+│       │   │   └── itcont.txt
+│       │   └── output
+│       │       └── top_cost_drug.txt
+│       ├── test_4
+│       │   ├── input
+│       │   │   └── itcont.txt
+│       │   └── output
+│       │       └── top_cost_drug.txt
+│       └── test_5
 │           ├── input
 │           │   └── itcont.txt
 │           └── output
 │               └── top_cost_drug.txt
 ├── output
-│   └── README.md
+│   └── top_cost_drug.txt
 ├── run.sh
 └── src
-    ├── README.md
-    ├── de_cc_data.txt
-    ├── itcont.txt
-    ├── pharmacyCount_large.ipynb
-    ├── pharmacyCount_smallsize.ipynb
-    └── result.txt
+    └── drug_usage.py
 ```
+
+## Test cases
+- test_1: Originally provided.
+- test_2: Contains 2 rows with the same prescriber and drug name.
+- test_3: Contains integer and float in the drug_cost column.
+- test_4: empty input file.
+- test_5: Contains missing value in one row.
