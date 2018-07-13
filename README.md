@@ -60,5 +60,5 @@ The directory structure for this repo:
 - test_1: Originally provided.
 - test_2: Contains 2 rows with the same prescriber and drug name.
 - test_3: Contains integer and float in the drug_cost column.
-- test_4: empty input file.
+- test_4: Empty input file.
 - test_5: Contains missing value in one row.
