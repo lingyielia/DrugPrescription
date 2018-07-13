@@ -9,12 +9,12 @@ In the shell, locate my repo's root directory, run:
 bash run.sh
 ```
 
-## How I approach this task
+## How do I approach this task
 1. I first open 2 dictionaries. One records drug name and its total cost. The other records drug name and its unique prescribers.
 2. I then combine these 2 dictionaries' information into a list of tuples. Each tuple contains drug name, count of unique prescribers, total cost.
 3. After sorting the list of tuples by total cost in descending order, store the final result to output file.
 
-## How to save memory when computing
+## How do I save memory so that the script can handle big data
 - Read file one line each time and process it before read the next line.
 - Convert string to float or integer when possible, as string takes more space.
 - Do in-place sorting.
